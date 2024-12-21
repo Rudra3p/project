@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="Quizelogo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="quize.css">
+    <title>Quiz</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display_create_container" id="display_create_container">
+        <h1 class="quiz_heading">Create a Quiz</h1>
+        <form id="createQuizForm">
+          <input
+            type="text"
+            id="quizTitle"
+            placeholder="Quiz Title"
+            required
+          />
+          <div id="quizContainer"></div>
+          <br />
+          <div class="button_container">
+          <a href="#createQuiz_button"><button type="button" id="addQuestionBtn"><span class="symbol">+</span> Add Question</button></a>
+          <button type="submit" id="createQuiz_button">Create Quiz <span class="symbol">&rarr;</span></button>
+          </div>
+        </form>
+      </div>
+      <h1 id="quizSubmitTitle"></h1>
+      <div id="takeQuizContainer"></div>
+      <button id="submitQuizBtn" style="display: none">Submit Quiz</button>
+      <div id="quizResult"></div>
+    </div>
+    <script src="quize.js"></script>
+  </body>
+</html>
