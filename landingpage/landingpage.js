@@ -1,3 +1,33 @@
+// navbar buttons
+
+
+function home_button(){
+let home = document.getElementById("home");
+let courses = document.getElementById("courses");
+let contact = document.getElementById("contact");
+  home.style.display = "block";
+  courses.style.display = "none";
+  contact.style.display = "none";
+}
+
+function course_button(){
+let home = document.getElementById("home");
+let courses = document.getElementById("courses");
+let contact = document.getElementById("contact");
+  home.style.display = "none";
+  courses.style.display = "block";
+  contact.style.display = "none";
+}
+
+function contact_button(){
+  let home = document.getElementById("home");
+  let courses = document.getElementById("courses");
+  let contact = document.getElementById("contact");
+  home.style.display = "none";
+  courses.style.display = "none";
+  contact.style.display = "block";
+}
+// courses image hover
 function course_img_web_over(){
   let course_img_title_web = document.getElementById("course_img_title_web");
   course_img_title_web.style.top = "26%";
@@ -97,4 +127,22 @@ function course_img_DevOps_out(){
   let course_img_para_DevOps = document.getElementById("course_img_para_DevOps");
   course_img_para_DevOps.style.top = "92%";
   course_img_para_DevOps.transition = "0.6s all linear";
+}
+
+// scroll event 
+
+function view_more(){
+  let home = document.getElementById("home");
+  home.scrollTop = "550";
+  let view_more = document.getElementById("view_more");
+  view_more.style.display = "none";
+}
+
+function home_scroll(){
+  let home = document.getElementById("home");
+  let homeScroll = home.scrollTop;
+  if(homeScroll >= 300){
+    let view_more = document.getElementById("view_more");
+    view_more.style.display = "none"
+  }
 }
