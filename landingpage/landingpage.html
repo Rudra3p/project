@@ -5,31 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses</title>
     <link rel="stylesheet" href="landingpage.css">
-    <script src="landingpage.js"></script>
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#home" id="default_open">Home</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li id="home_button" onclick="home_button()">Home</li>
+                <li id="course_button" onclick="course_button()">Courses</li>
+                <li id="contact_button" onclick="contact_button()">Contact</li>
             </ul>
         </nav>
     </header>
     <main>
-        <section id="home" class="home_container">
+        <section id="home" class="home_container" onscroll="home_scroll()">
             <article class="hero">
                 <div>
-                    <div>
+                    <div id="contant_hero">
                         <h1 class="hero_title">Code Book</h1>
                         <p class="hero_paragraph_1">Enhance your skill</p>
                         <p class="hero_paragraph_2">gain experiance in Web/App development</p>
                         <p class="hero_paragraph_3">learning about future tech and AI/ML</p>
                         <p class="hero_paragraph_4">get skills in Dev-Ops</p>
                         <p class="hero_paragraph_5">master in UI/UX</p>
-                        <a href="#courses"><button class="hero_button">View Course &rarr;</button></a>
+                        <button class="hero_button" onclick="course_button()">View Course &rarr;</button>
                     </div>
+                    <div id="view_more"><span onclick="view_more()">&#10219;</span></div>
                 </div>
             </article>
             <article class="about" id="about">
@@ -238,10 +238,6 @@
             </article>
         </section>
     </main>
-    <script src="script.js"></script>
-    <script>
-        let default_open = document.getElementById("default_open");
-        default_open.click();
-    </script>
+    <script src="landingpage.js"></script>
 </body>
 </html>
