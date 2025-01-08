@@ -11,8 +11,6 @@ body {
 }
 
 header {
-    
-    z-index: 6;
     position: sticky;
     top: 0;
     background-color: #ffffff;
@@ -30,6 +28,7 @@ header nav{
     justify-content: end;
 }
 header nav ul {
+    z-index: 6;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -39,18 +38,14 @@ header nav ul li {
     display: inline-block;
     margin-right: 20px;
     transition: all 0.3s linear;
+    text-decoration: none;
+    cursor: pointer;
     &:hover{
         text-decoration: underline;
     }
 }
 
-header nav a {
-    color: #000000;
-    text-decoration: none;
-}
-
 main {
-    
     margin-top: 0%;
     display: flex;
     z-index: 0;
@@ -68,12 +63,14 @@ section {
     height: 100%;
     background-color: #f7f7f7;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    &:target{
-        display: block;
-    }
+    
 }
 section::-webkit-scrollbar{
     display: none;
+}
+#home{
+    display: block;
+    scroll-behavior: smooth;
 }
 .hero{
     background-image: url('herosec_img.jpg');
@@ -91,7 +88,7 @@ section::-webkit-scrollbar{
     background: #0000003f;
     z-index: 4;
 }
-.hero>div>div{
+.hero>div>#contant_hero{
     position: relative;
     top: 45%;
     left: 15%;
@@ -103,7 +100,7 @@ section::-webkit-scrollbar{
     font-size: 30px;
     color: white;
 }
-.hero>div>div>p{
+.hero>div>#contant_hero>p{
     position: absolute;
     opacity: 0;
     color: white;
@@ -248,7 +245,32 @@ section::-webkit-scrollbar{
         opacity: 0;
     }
 }
-
+.hero>div>#view_more{
+    position: relative;
+    top: 48%;
+    left: 51%;
+    height: fit-content;
+    width: fit-content;
+    z-index: 5;
+    transform: rotate(90deg);
+    animation: viewMore 1s infinite linear;
+}
+.hero>div>#view_more>span{
+    cursor: pointer;
+    color: white;
+    font-size: 25px;
+}
+@keyframes viewMore{
+    0%{
+        transform: translateY(0) rotate(90deg);
+    }
+    50%{
+        transform: translateY(10px) rotate(90deg);
+    }
+    100%{
+        transform: translateY(0) rotate(90deg);
+    }
+}
 .about{
     display: block;
     width: 100%;
