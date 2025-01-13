@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="Todo.css">
+    <script src="Todo list.js" defer></script> <!-- Ensures JS is loaded after HTML -->
+</head>
+<body>
+    <main>
+        <section>
+            <article class="input_container">
+                <input type="text" id="task_input" placeholder="Enter the task..." required>
+                <button id="add_task" onclick="add_task()">Add task</button>
+            </article>
+            <article class="task_list_container">
+                <ul id="task_list" class="task_list">
+                    <!-- Tasks will be dynamically added here -->
+                </ul>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
