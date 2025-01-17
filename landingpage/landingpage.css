@@ -10,12 +10,24 @@ body {
     width: 100%;
 }
 
-header {
-    position: sticky;
+.header { 
+    z-index: 7;
+    position: fixed;
+    top: 0;
+    background-color: #ffffff00;
+    color: #ffffff;
+    height: 8%;
+    width: 100vw;
+    text-align: right;
+}
+.header_scroll_and_change{
+    z-index: 7;
+    position: fixed;
     top: 0;
     background-color: #ffffff;
     color: #000000;
     height: 8%;
+    width: 100vw;
     text-align: right;
     border-bottom: 1px solid black;
     box-shadow: 0px 0px 30px rgb(74 74 74 / 86%);
@@ -25,13 +37,15 @@ header nav{
     width: 100%;
     display: flex;
     align-items: center;
-    justify-content: end;
+    justify-content: end; 
+    
 }
 header nav ul {
-    z-index: 6;
     list-style: none;
     margin: 0;
     padding: 0;
+    
+
 }
 
 header nav ul li {
@@ -40,6 +54,7 @@ header nav ul li {
     transition: all 0.3s linear;
     text-decoration: none;
     cursor: pointer;
+
     &:hover{
         text-decoration: underline;
     }
@@ -52,7 +67,7 @@ main {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 91%;
+    height: 100%;
 }
 
 
@@ -247,7 +262,7 @@ section::-webkit-scrollbar{
 }
 .hero>div>#view_more{
     position: relative;
-    top: 48%;
+    top: 51%;
     left: 51%;
     height: fit-content;
     width: fit-content;
@@ -285,18 +300,23 @@ section::-webkit-scrollbar{
 }
 
 /* courses */
-
+.courses_container{
+    margin-top: 3%;
+}
 .course{
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 .course_heading{
     margin: 15px 0px;
     height: 5%;
-    width: 100%;
-    text-align: center;
+    width: 90%;
+    font-size: 1.8rem;
+    text-align: left;
     font-family: 'Times New Roman', Times, serif;
     text-decoration: underline;
 }
@@ -307,10 +327,12 @@ section::-webkit-scrollbar{
     flex-direction: row;
 }
 .course_img{
-    height: 100%;
+    margin-left: 5%;
+    height: 95%;
     width: 60%;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 30px;
 }
 .course_img_title{
     height: auto;
@@ -358,7 +380,7 @@ section::-webkit-scrollbar{
 }
 .course_details{
     height: 100%;
-    width: 40%;
+    width: 32%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -382,7 +404,7 @@ section::-webkit-scrollbar{
 }
 .course_details div {
     margin-top: 40px;
-    width: 70%;
+    width: 35%;
     height: 25%;
     
 }
@@ -437,6 +459,7 @@ section::-webkit-scrollbar{
     &:hover{
         box-shadow: 0px 0px 10px black;
         transform: translateY(-5px);
+        scale: 1.1;
     }
 }
 #WhatsApp_link{
