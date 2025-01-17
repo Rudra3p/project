@@ -1,5 +1,8 @@
-// navbar buttons
+// header
 
+let header = document.querySelector(".header");
+
+// navbar buttons
 
 function home_button(){
 let home = document.getElementById("home");
@@ -8,15 +11,20 @@ let contact = document.getElementById("contact");
   home.style.display = "block";
   courses.style.display = "none";
   contact.style.display = "none";
+
+  header.classList.remove("header_scroll_and_change");
 }
 
 function course_button(){
 let home = document.getElementById("home");
 let courses = document.getElementById("courses");
 let contact = document.getElementById("contact");
+
   home.style.display = "none";
   courses.style.display = "block";
   contact.style.display = "none";
+  
+  header.classList.add("header_scroll_and_change");
 }
 
 function contact_button(){
@@ -26,6 +34,8 @@ function contact_button(){
   home.style.display = "none";
   courses.style.display = "none";
   contact.style.display = "block";
+
+  header.classList.add("header_scroll_and_change");
 }
 // courses image hover
 function course_img_web_over(){
@@ -145,4 +155,15 @@ function home_scroll(){
     let view_more = document.getElementById("view_more");
     view_more.style.display = "none"
   }
+
+  if(homeScroll >= 300){
+    header.classList.add("header_scroll_and_change");
+
+  }
+  else{
+    header.classList.remove("header_scroll_and_change");
+
+  }
 }
+
+
