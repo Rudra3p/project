@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Early Weather</title>
+    <link rel="stylesheet" href="../../src/output.css">
+    <link rel="shortcut icon" href="img/weather.png" type="image/x-icon">
+    <link rel="import" href="videos/0_Blue Sky_White Clouds_3840x2160.mp4">
+    <link rel="import" href="component.html">
+</head>
+<body class="h-screen w-screen">
+    <header class="w-full h-[10%] shadow-[0_10px_25px_#b5b5b5] flex items-center">
+        <div class="flex items-center ml-[5%] cursor-pointer">
+            <img class="w-[60px] h-full bg-cover" src="img/weather.png" alt="Weather Logo">
+            <h1 class="text-[25px] ml-2">Early Weather</h1>
+        </div>
+        <div id="menu_button" class="absolute right-[2%] w-[33px] h-[33px] flex items-center justify-center rounded-full cursor-pointer hover:bg-[#e1e1e1]">
+            <img class="bg-cover w-[75%] h-[75%]" src="img/menu_24dp_434343_FILL0_wght400_GRAD0_opsz24.png" alt="Menu">
+        </div>
+        <div id="drop_down" class="absolute top-[13%] right-[2%] hidden flex-col w-[150px] bg-white shadow-[0_0_25px_#383838] rounded-[18px] overflow-hidden z-10">
+            <button id="history_button" class="w-full h-[50px] hover:bg-[#e0e0e0]">History</button>
+            <button id="help_button" class="w-full h-[50px] hover:bg-[#e0e0e0]">Help</button>
+            <button id="feedback_button" class="w-full h-[50px] hover:bg-[#e0e0e0]">Feedback</button>
+        </div>
+    </header>
+    <main class="flex flex-col items-center justify-center w-full h-[85%]">
+        <div id="history_container" class="hidden absolute top-[12%] left-[72%] w-[25%] h-[80%] bg-white rounded-[15px]">
+            <!-- div will display here -->
+        </div>
+        <div id="help_container" class="hidden absolute top-[12%] left-[72%] w-[25%] h-[80%] bg-white rounded-[15px]">
+
+        </div>
+        <div id="feed_back_container" class="hidden absolute top-[12%] left-[72%] w-[25%] h-[80%] bg-white rounded-[15px]">
+
+        </div>
+        <div id="location_input_submit_container" class="w-[90%] max-w-[500px] flex items-center bg-white border-[#8e8e8e] border-[1px] hover:border-[#000] hover:border-[1px] rounded-full z-[5]">
+            <input
+                type="text"
+                id="location_input"
+                class="rounded-full w-full h-full pl-8 py-2  focus:outline-none "
+                placeholder="Enter your location"
+                required
+            />
+            <button
+                id="location_submit"
+                type="button"
+                class="w-[40px] h-[40px] flex items-center justify-center"
+            >
+            <span class="w-[85%] h-[85%] rounded-[50%] hover:bg-[#c3c3c3] flex items-center justify-center">
+                <img class="bg-cover w-[60%] h-[60%] " src="img/search_24dp_434343_FILL0_wght400_GRAD0_opsz24.png" alt="Search">
+            </span>
+            </button>
+        </div>
+        <video id="bg_videos"   autoplay loop muted class="absolute h-[85%] w-screen object-cover z-[-2]">
+               <source id="particles_vi" src="videos/7878_Particles_Background_1920x1080.mp4" type="video/mp4" class=" absolute"> 
+               <source id="smoke_vi" src="videos/0_Blue Sky_White Clouds_3840x2160.mp4" type="video/mp4" class="hidden absolute"> 
+        </video>
+        <div id="weather_show" class="w-[90%] max-w-[500px] mt-6 text-center">
+            <p class="text-gray-500">Weather information will be displayed here.</p>
+        </div>
+    </main>
+    <footer class="fixed bottom-0 w-full h-[5%] bg-[#d2d2d2] border-t border-[#979797] flex items-center pl-6">
+        <p>@early-weather.com</p>
+    </footer>
+    <script type="module" src="weather.js"></script>
+</body>
+</html>
