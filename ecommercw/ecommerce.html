@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../src/output.css">
+</head>
+<body class="h-screen w-screen">
+    <header class="relative h-[10%] w-[100%] border-[1px] border-[#3e3e3e]">
+
+
+        <button id="add_product_container_display" class="absolute left-[85%] top-[18%] h-[35px] w-[150px] bg-[#0b9bd8] text-[#f5f5f5] rounded-[30px] hover:bg-[#3460ff]">+ add product</button>
+        <button id="product_cart_display_button" class="w-[30px] h-[30px] bg-cover absolute left-[75%] top-[18%]"><img src="shoping cart.png" alt=""><span id="product_cart_counter" class="hidden absolute top-[-10%] left-[75%] h-[30%] min-w-[30%] rounded-[5px] text-center text-[25%] font-bold text-[#ffffff] bg-[#ff0000] pl-[5%] pr-[5%]"></span></button>
+        <button id="back_button" class="absolute left-[85%] top-[18%] hidden flex-row"><img src="keyboard_backspace_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" class="h-[25px] w-[25px]" alt=""> Back</button>
+    </header>
+    <main class="h-[90%] w-[100%]">
+        <div id="product_cart_container" class="hidden absolute left-[75%] top-[10%] h-[90%] w-[25%] bg-[#ededed] overflow-y-auto">
+            <table id="product_cart_container_table">
+                <!-- products cart details show here -->
+            </table>
+        </div>
+        <div id="add_product_container" class="w-full h-full hidden grid-flow-row [grid-template-columns:repeat(auto-fit,_minmax(0,_1fr))] [grid-template-row:repeat(auto-fit,_minmax(0,_1fr))]">
+            
+            <div id="add_product_sub_container" class="col-start-1 col-end-7 flex flex-col items-center justify-center">
+                <input type="text" id="enter_company_name" class="h-[40px] w-[260px] border-[1px] border-[#969696] m-[10px] hover:border-[1px] hover:border-[#000] focus:border-[1px] focus:border-[#000] focus:outline-none rounded-[4px] pl-[10px]" placeholder="enter company name">
+                <input type="text" id="enter_product_name" class="h-[40px] w-[260px] border-[1px] border-[#969696] m-[10px] hover:border-[1px] hover:border-[#000] focus:border-[1px] focus:border-[#000] focus:outline-none rounded-[4px] pl-[10px]" placeholder="enter product name">
+                <input type="number" id="enter_price" class="h-[40px] w-[260px] border-[1px] border-[#969696] m-[10px] hover:border-[1px] hover:border-[#000] focus:border-[1px] focus:border-[#000] focus:outline-none rounded-[4px] pl-[10px]" placeholder="enter price">
+                <input type="file" name="" id="enter_product_img" accept="image/*" class="m-[10px] h-[40px] w-[260px]">
+                <button id="add_this_product" class="h-[40px] w-[260px] bg-[#fff] border-[1px] border-[#737373] rounded-[4px] m-[10px] hover:bg-[#dbdbdb]">+ add</button>
+                <button id="done_add_this_product" class="h-[40px] w-[260px] bg-[#0b9bd8] text-[#f5f5f5] border-[#737373] rounded-[4px] m-[10px] hover:bg-[#3460ff]">Done</button>
+            </div>
+            <div id="display_add_product" class="hidden col-start-7 col-end-10 border-l-[1px] border-l-[#5d5d5d]">
+                <ul id="display_add_product_li_container">
+                    <!-- li will be display here -->
+                </ul>
+            </div>
+        </div>
+        <div id="product_see_buy_container" class="h-full w-full">
+            <div id="product_shower" class="h-[90%] w-full flex flex-row flex-wrap overflow-y-auto justify-start gap-[56px] p-[25px]">
+                <!-- <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
+                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div> -->
+
+            </div>
+            <div id="total_shower" class="h-[10%] w-full">
+                <h2 id="total_shower_value"></h2>
+            </div>
+        </div>
+    </main>
+    <script src="ecommerce.js"></script>
+</body>
+</html>
