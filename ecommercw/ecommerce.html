@@ -15,10 +15,14 @@
         <button id="back_button" class="absolute left-[85%] top-[18%] hidden flex-row"><img src="keyboard_backspace_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" class="h-[25px] w-[25px]" alt=""> Back</button>
     </header>
     <main class="h-[90%] w-[100%]">
-        <div id="product_cart_container" class="hidden absolute left-[75%] top-[10%] h-[90%] w-[25%] bg-[#ededed] overflow-y-auto">
-            <table id="product_cart_container_table">
+        <div id="product_cart_container" class="hidden absolute left-[75%] top-[10%] h-[90%] w-[25%] bg-[#ededed] ">
+            <table id="product_cart_container_table" class="h-[90%] overflow-y-auto">
                 <!-- products cart details show here -->
             </table>
+            <div id="total_shower" class="h-[10%] w-full">
+                <h2 id="total_shower_value"></h2>
+                <button id="total_buy_value_button" class="w-0 h-0 rounded border-[1px] border-[#3c3c3c] bg-[#1389ff]">Buy</button>
+            </div>
         </div>
         <div id="add_product_container" class="w-full h-full hidden grid-flow-row [grid-template-columns:repeat(auto-fit,_minmax(0,_1fr))] [grid-template-row:repeat(auto-fit,_minmax(0,_1fr))]">
             
@@ -37,24 +41,12 @@
             </div>
         </div>
         <div id="product_see_buy_container" class="h-full w-full">
-            <div id="product_shower" class="h-[90%] w-full flex flex-row flex-wrap overflow-y-auto justify-start gap-[56px] p-[25px]">
-                <!-- <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div>
-                <div class="h-[300px] w-[30%] bg-[#2084ff] rounded-[20px]">hi</div> -->
+            <div id="product_shower" class="h-[90%] w-full flex flex-row flex-wrap overflow-y-auto justify-start gap-[15px] p-[25px]">
+                
+                <!-- products will display here  -->
 
             </div>
-            <div id="total_shower" class="h-[10%] w-full">
-                <h2 id="total_shower_value"></h2>
-            </div>
+            
         </div>
     </main>
     <script src="ecommerce.js"></script>
