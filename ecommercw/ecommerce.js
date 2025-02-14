@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const backButton = document.getElementById("back_button");
     const productCartContainerTable = document.getElementById("product_cart_container_table");
 
-    const enterCompanyName = document.getElementById("enter_company_name");
+    const enterproductDetails = document.getElementById("enter_company_name");
     const enterProductName = document.getElementById("enter_product_name");
     const enterPrice = document.getElementById("enter_price");
     const enterProductImg = document.getElementById("enter_product_img");
     const addThisProduct = document.getElementById("add_this_product");
     const displayAddProduct = document.getElementById("display_add_product");
-
+    
     
     
     
@@ -56,11 +56,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     addThisProduct.addEventListener('click', () => {
-        const enterCompanyNameValue = enterCompanyName.value.trim();
+        const enterproductDetailsValue = enterproductDetails.value.trim();
         const enterProductNameValue = enterProductName.value.trim();
         const enterPriceValue = enterPrice.value.trim();
 
-        if (!enterCompanyNameValue) {
+        if (!enterproductDetailsValue) {
             alert("Please enter company name");
             return;
         }
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const imgUrl = reader.result; // Get the data URL for the image
 
             products.push({
-                comName: enterCompanyName.value,
+                ProDetail: enterproductDetails.value,
                 ProName: enterProductName.value,
                 ProPrice: enterPrice.value,
                 ProImg: imgUrl, // Store image URL
@@ -97,10 +97,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const lastAddedProduct = products[products.length - 1];
 
             // Append the new list item with the product details
-            displayAddProductLi.innerHTML = `${lastAddedProduct.comName} ${lastAddedProduct.ProName} ${lastAddedProduct.ProPrice}`;
+            displayAddProductLi.innerHTML = `${lastAddedProduct.ProDetail} ${lastAddedProduct.ProName} ${lastAddedProduct.ProPrice}`;
             displayAddProductLiContainer.appendChild(displayAddProductLi);
 
-            enterCompanyName.value = "";
+            enterproductDetails.value = "";
             enterProductName.value = "";
             enterPrice.value = "";
             enterProductImg.value = ""; // Reset image input field
@@ -125,28 +125,20 @@ document.addEventListener('DOMContentLoaded', () => {
             reader.onloadend = () => {
                 const imgUrl = reader.result; // Get the data URL for the image
 
-                    // let cartContainerInImg = document.createElement("div");
-                    // cartContainerInImg.style.backgroundImage = `url('${imgUrl}')`;
-                    // cartContainerInImg.classList.add("bg-contain" , "bg-[#dddddd]", "bg-center", "bg-no-repeat", "h-[300px]", "w-full")
-                    // let cartContainerPro = document.createElement("h2");
-                    // cartContainerPro.innerText = `${enterProductName.value}`;
-                    // let cartContainerCo = document.createElement("p");
-                    // cartContainerCo.innerText = `${enterCompanyName.value}`;
-                    // let cartContainerVal = document.createElement("p");
-                    // cartContainerVal.innerText = `${enterPrice.value}`;
+        
             let cartContainer = document.createElement("div");
-            cartContainer.classList.add("h-[600px]","w-[30%]","rounded-[20px]","flex","items-center","justify-flexend","flex-col");
+            cartContainer.classList.add("h-[350px]", "w-[24%]" ,"overflow-hidden", "rounded-[10px]","flex","items-center","justify-flexend","flex-col","border-[1px]", "border-[#0000005c]");
             cartContainer.id = "cartContainer";
 
             let cartContainerInImg = document.createElement("div");
             cartContainerInImg.style.backgroundImage = `url('${imgUrl}')`;
-            cartContainerInImg.classList.add("bg-contain" , "bg-[#dddddd]", "bg-center", "bg-no-repeat", "h-[300px]", "w-full")
+            cartContainerInImg.classList.add("bg-contain" , "bg-[#ededed]", "bg-center", "bg-no-repeat", "h-[180px]", "w-full")
 
             let cartContainerPro = document.createElement("h2");
             cartContainerPro.innerText = enterProductName.value;
 
             let cartContainerCo = document.createElement("p");
-            cartContainerCo.innerText = enterCompanyName.value;
+            cartContainerCo.innerText = enterproductDetails.value;
 
             let cartContainerVal = document.createElement("p");
             cartContainerVal.innerText = `$${enterPrice.value}`;
@@ -156,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartContainerAddCart.classList.add("h-[30px]", "w-[100px]", "rounded-[5px]", "bg-[#0b9bd8]", "text-white");
 
             cartContainer.dataset.productName = enterProductName.value;
-            cartContainer.dataset.companyName = enterCompanyName.value;
+            cartContainer.dataset.productDetails = enterproductDetails.value;
             cartContainer.dataset.productPrice = enterPrice.value;
 
             let productCartContainerTableRow = document.createElement("tr");
@@ -176,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 productCartContainerTableRow.innerHTML = `
                     <td>${cartContainer.dataset.productName}</td>
-                    <td>${cartContainer.dataset.companyName}</td>
+                    <td>${cartContainer.dataset.productDetails}</td>
                     <td>$${cartContainer.dataset.productPrice}</td>
                     <td>${countIteration}</td>
                 `;
@@ -234,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
             productShower.appendChild(cartContainer);
     
                 // Reset inputs
-                enterCompanyName.value = "";
+                enterproductDetails.value = "";
                 enterProductName.value = "";
                 enterPrice.value = "";
                 enterProductImg.value = "";
@@ -253,18 +245,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // Loop through the products and display each if there are any products
         products.forEach(product => {
             let cartContainer = document.createElement("div");
-            cartContainer.classList.add("h-[600px]","w-[30%]","rounded-[20px]","flex","items-center","justify-flexend","flex-col");
+            cartContainer.classList.add("h-[350px]", "w-[24%]" ,"overflow-hidden", "rounded-[10px]","flex","items-center","justify-flexend","flex-col","border-[1px]", "border-[#0000005c]");
             cartContainer.id = "cartContainer";
 
             let cartContainerInImg = document.createElement("div");
             cartContainerInImg.style.backgroundImage = `url('${product.ProImg}')`;
-            cartContainerInImg.classList.add("bg-contain" , "bg-[#dddddd]", "bg-center", "bg-no-repeat", "h-[300px]", "w-full")
+            cartContainerInImg.classList.add("bg-contain" , "bg-[#ededed]", "bg-center", "bg-no-repeat", "h-[180px]", "w-full")
 
             let cartContainerPro = document.createElement("h2");
             cartContainerPro.innerText = product.ProName;
 
             let cartContainerCo = document.createElement("p");
-            cartContainerCo.innerText = product.comName;
+            cartContainerCo.innerText = product.ProDetail;
 
             let cartContainerVal = document.createElement("p");
             cartContainerVal.innerText = `$${product.ProPrice}`;
@@ -274,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
             cartContainerAddCart.classList.add("h-[30px]", "w-[100px]", "rounded-[5px]", "bg-[#0b9bd8]", "text-white");
 
             cartContainer.dataset.productName = product.ProName;
-            cartContainer.dataset.companyName = product.comName;
+            cartContainer.dataset.productDetails = product.ProDetail;
             cartContainer.dataset.productPrice = product.ProPrice;
 
             let productCartContainerTableRow = document.createElement("tr");
@@ -294,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 productCartContainerTableRow.innerHTML = `
                     <td>${cartContainer.dataset.productName}</td>
-                    <td>${cartContainer.dataset.companyName}</td>
+                    <td>${cartContainer.dataset.productDetails}</td>
                     <td>$${cartContainer.dataset.productPrice}</td>
                     <td>${countIteration}</td>
                 `;
@@ -355,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
             //     <div class="h-[600px] w-[30%] rounded-[20px] " >
             //         <div class="bg-contain bg-no-repeat h-[300px] w-full" style="background-image: url('${product.ProImg}');"></div>
             //         <p>${product.ProName}</p>
-            //         <p>${product.comName}</p>
+            //         <p>${product.ProDetail}</p>
             //         <p>${product.ProPrice}</p>
             //     </div>
             // `);
@@ -368,7 +360,7 @@ document.addEventListener('DOMContentLoaded', () => {
         productCartDisplayButton.style.display = "block";
     
         // Clear inputs and reset products array
-        enterCompanyName.value = "";
+        enterproductDetails.value = "";
         enterProductName.value = "";
         enterPrice.value = "";
         enterProductImg.value = "";
