@@ -49,11 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function animatePieChart(invested, returns) {
         let total = invested + returns;
-        let data = [invested, returns];
-        let colors = ["#3498db", "#f39c12"];
+        let data = [returns, invested];
+        let colors = ["#f39c12", "#3498db"];
 
         let animationProgress = 0;
-        let animationSpeed = 0.02; // Speed of animation
+        let animationSpeed = 0.04; // Speed of animation
 
         // Ensure canvas updates properly
         canvas.width = canvas.offsetWidth;
