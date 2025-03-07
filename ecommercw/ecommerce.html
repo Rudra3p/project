@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce</title>
+    <link rel="stylesheet" href="../../src/output.css">
+    <style>
+        /* animation is here */
+    </style>
+</head>
+<body class="h-screen w-screen">
+    <header class="relative bg-[#505050] h-[10%] w-[100%] border-b-[1px] border-[#3e3e3e] flex items-center px-6">
+        <img src="shoppigbagreal1.png" alt="" class="h-[65%] bg-cover mr-2" >
+        <h1 class="text-2xl font-bold text-white text-left">E-commerce</h1>
+        <div id="search_other_button_container" class="absolute h-full flex items-center space-x-4 left-[28%]">
+            <input type="text" id="search_bar" class="mr-[130px] h-[35px] w-[516px] border-[1px] border-[#ececec] rounded-[30px] pl-[35px] py-[5px]" placeholder="Search products...">
+            <button id="add_product_container_display" class=" h-[35px] w-[150px] bg-[#ffffff] text-[#000000] rounded-[30px] hover:bg-[#f1f1f1]">+ Add Product</button>
+            <button id="product_cart_display_button" class="w-[30px] h-[30px] bg-cover relative"><img src="shopping_cart_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt=""><span id="product_cart_counter" class="hidden absolute top-[-10%] left-[75%] h-[40%] min-w-[40%] rounded-[5px] text-center text-[50%] font-bold text-[#ffffff] bg-[#3dbf00] pl-[5%] pr-[5%]"></span></button>
+            <button id="back_button" class="text-white hidden flex-row items-center">Back <img src="logout_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" class="h-[25px] w-[25px]" alt=""></button>
+        </div>
+    </header>
+    <main class="h-[90%] w-[100%]">
+        <div id="product_cart_container" class="hidden absolute left-[75%] top-[10%] h-[90%] w-[25%] bg-[#ededed] p-4 rounded-lg shadow-lg z-[7]">
+            <table id="product_cart_container_table" class="h-[90%] overflow-y-auto w-full">
+                <!-- products cart details show here -->
+            </table>
+            <div id="total_shower" class="h-[10%] w-full flex justify-between items-center mt-4">
+                <h2 id="total_shower_value" class="text-xl font-bold"></h2>
+                <button id="total_buy_value_button" class="h-[40px] w-[100px] rounded border-[1px] border-[#3c3c3c] bg-[#1389ff] text-white">Buy</button>
+            </div>
+        </div>
+        <div id="add_product_container" class="w-full h-full hidden grid-cols-1 md:grid-cols-2 gap-4 p-4">
+            <div id="add_product_sub_container" class="flex flex-col items-center justify-center bg-white p-4 rounded-lg shadow-lg">
+                <input type="text" id="enter_company_name" class="h-[40px] w-[260px] border-[1px] border-[#969696] m-[10px] hover:border-[#000] focus:border-[#000] rounded-[4px] pl-[10px]" placeholder="Enter company name">
+                <input type="text" id="enter_product_name" class="h-[40px] w-[260px] border-[1px] border-[#969696] m-[10px] hover:border-[#000] focus:border-[#000] rounded-[4px] pl-[10px]" placeholder="Enter product name">
+                <input type="number" id="enter_price" class="h-[40px] w-[260px] border-[1px] border-[#969696] m-[10px] hover:border-[#000] focus:border-[#000] rounded-[4px] pl-[10px]" placeholder="Enter price">
+                <input type="file" id="enter_product_img" accept="image/*" class="m-[10px] h-[40px] w-[260px]">
+                <button id="add_this_product" class="h-[40px] w-[260px] bg-[#fff] border-[1px] border-[#737373] rounded-[4px] m-[10px] hover:bg-[#dbdbdb]">+ Add</button>
+                <button id="done_add_this_product" class="h-[40px] w-[260px] bg-[#0b9bd8] text-[#f5f5f5] border-[#737373] rounded-[4px] m-[10px] hover:bg-[#3460ff]">Done</button>
+            </div>
+            <div id="display_add_product" class="hidden col-start-7 col-end-10 border-l-[1px] border-l-[#5d5d5d] p-4 rounded-lg shadow-lg">
+                <ul id="display_add_product_li_container">
+                    <!-- li will be display here -->
+                </ul>
+            </div>
+        </div>
+        <div id="product_see_buy_container" class="h-full w-full bg-white rounded-lg shadow-lg">
+            <div id="product_shower" class="h-[90%] w-full flex flex-row flex-wrap overflow-y-auto justify-start gap-[15px] p-[5px]">
+                <!-- products will display here  -->
+            </div>
+        </div>
+        <div id="order_confirm_bill_container" class="hidden absolute left-[25%] top-[10%] h-[80%] w-[50%] bg-[#ffffff] p-4 rounded-lg shadow-lg z-[9]">
+            <h2 class="text-2xl font-bold mb-4">Order Confirmation</h2>
+            <table id="order_confirm_bill_table" class="w-full">
+                <!-- order confirmation details will show here -->
+            </table>
+            <div id="order_total_shower" class="h-[10%] w-full flex justify-between items-center mt-4">
+                <h2 id="order_total_shower_value" class="text-xl font-bold"></h2>
+                <button id="order_confirm_button" class="h-[40px] w-[100px] rounded border-[1px] border-[#3c3c3c] bg-[#1389ff] text-white">Confirm</button>
+            </div>
+        </div>
+    </main>
+    <script src="ecommerce.js"></script>
+</body>
+</html>
