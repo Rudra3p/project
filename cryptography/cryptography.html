@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Encrypt & Decrypt</title>
+  <link rel="stylesheet" href="cryptography.css">
+</head>
+<body>
+  <div class="container">
+    <h2>Text Encryptor & Decryptor</h2>
+
+    <label for="key">Key (Number):</label>
+    <input type="number" id="key" placeholder="Enter key...">
+
+    <label for="message">Message:</label>
+    <textarea id="message" placeholder="Type your message..."></textarea>
+
+    <div class="buttons">
+      <button onclick="encrypt()">Encrypt</button>
+      <button onclick="decrypt()">Decrypt</button>
+    </div>
+
+    <p><strong>Result:</strong> <span id="result">Nothing yet.</span></p>
+  </div>
+
+  <script src="cryptography.js"></script>
+</body>
+</html>
